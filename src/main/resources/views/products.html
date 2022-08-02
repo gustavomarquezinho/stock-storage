@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,1,0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,200"/>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"/>
+
+        <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/products.css"/>
+
+        <script async src="/js/products.js"></script>
+        
+        <title>Stock Storage</title>
+    </head>
+
+    <body>
+        <a class="sidebar-button-main" onclick="showHideMenu()">
+            <i class="material-symbols-rounded">menu</i>
+        </a>
+
+        <header class="header">
+            <div class="inner">
+                <div class="logo">
+                    <div>
+                        <i class="material-symbols-rounded">
+                            gesture
+                        </i>
+                        
+                        <h1>Stock <span>Storage</span></h1>
+                    </div>
+                </div>
+
+                <nav>
+                    <li>
+                        <span><a href="">Meu perfil</a></span>
+                    </li>
+
+                    <li>
+                        <span><a href="">Sobre</a></span>
+                    </li>
+
+                    <li>
+                        <span><a href="">Sair</a></span>
+                    </li>
+                </nav>
+            </div>
+        </header>
+
+        <div class="sidebar">
+            <div class="sidebar-search">
+                <i class="material-symbols-outlined">
+                    search
+                </i>
+
+                <input placeholder="Buscar"></input>
+            </div>
+
+            <a class="sidebar-page-button" href="">
+                <i class="material-symbols-outlined">label</i>
+                <span class="sidebar-button-name">Produtos</span>
+            </a>
+
+            <a th:href="@{/produtos/cadastrar}">
+                <i class="material-symbols-outlined">add_circle</i>
+                <span class="sidebar-button-name">Cadastrar</span>
+            </a>
+
+            <a href="">
+                <i class="material-symbols-outlined">calendar_month</i>
+                <span class="sidebar-button-name">Histórico</span>
+            </a>
+    
+            <a href="">
+                <i class="material-symbols-outlined">trending_up</i>
+                <span class="sidebar-button-name">Análises</span>
+            </a>
+            
+            <a href="">
+                <i class="material-symbols-outlined">group</i>
+                <span class="sidebar-button-name">Usuários</span>
+            </a>
+        </div>
+
+        <section class="table-section">
+            <table class="table-main table table-borderless table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                        <th>Removido</th>
+                        <th>Estoque Mínimo</th>
+                        <th>Valor Unitário</th>
+                        <th>Localização</th>
+                        <th>Fornecedor</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table-items">
+                    <tr th:each="item:${products}">
+                        <td th:text=${item.id}></td>
+                        <td th:text=${item.name}></td>
+                        <td th:text=${item.type}></td>
+                        <td th:text=${item.quantity}></td>
+                        <td th:text=${item.removed}></td>
+                        <td th:text=${item.minimum}></td>
+                        <td th:text=${item.price}></td>
+                        <td th:text=${item.location}></td>
+                        <td th:text=${item.supplier}></td>
+
+                        <td>
+                            <a class="table-button-modify" th:href="@{/produtos/editar/{id}(id=${item.id})}">
+                                <i class="material-symbols-outlined">draw</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>

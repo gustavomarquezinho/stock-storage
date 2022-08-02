@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+body {
+    background-color: #304D63;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8FB9AA), to(#304D63)) fixed;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+
+/* Cabeçalho */
+.header {
+    width: 100vw;
+    height: 80px;
+    background-color: rgba(143, 185, 170, 1.0);
+}
+
+.header .inner {
+    display: block;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header .logo {
+    float: left;
+    display: table;
+    margin-left: -5%;
+    height: 100%;
+    text-shadow: 2px 2px 4px #00000028;
+}
+
+.header .logo div {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.header .logo img {
+    height: 40px;
+}
+
+.header .logo i {
+    font-size: 40px;
+    color: #1D2F3D;
+}
+
+.header .logo h1 {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d2f3d;
+    vertical-align: bottom;
+}
+
+.header .inner .logo span {
+    font-weight: 100;
+}
+
+.header nav {
+    float: right;
+    height: 100%;
+}
+
+.header nav li {
+    display: table;
+    float: left;
+    margin-right: 30px;
+    height: 100%;
+}
+
+.header nav li:last-of-type {
+    margin-right: 0;
+}
+
+.header nav span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header nav a {
+    transition: font-size 0.5s;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.header nav a:hover {
+    transition: color 500ms;
+    color: white;
+}
+
+
+/* Menu Lateral */
+.sidebar {     
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    transition: 750ms;
+    width: 15%;
+    min-height: 100%;
+    padding: 110px 0px;
+    background-color: #8FB9AA;
+}
+
+.sidebar-button-main {
+    position: fixed;
+    left: 20px;
+    top: 24px;
+    color: #284155;
+}
+
+.sidebar-button-main i {
+    font-size: 28px;
+    margin-right: 200px;
+}
+
+.sidebar-search {
+    margin-bottom: 50px;
+}
+
+.sidebar-search i {
+    position: absolute;
+    line-height: 50px;
+}
+
+.sidebar-search input {
+    box-shadow: 2px 2px rgba(34, 54, 71, 0.85), -2px -2px 20px rgba(34, 54, 71, 0.10);
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    width: 90%;
+    height: 50px;
+    background-color: #8FB9AA;
+    text-align: center;
+}
+
+.sidebar-search input::placeholder {
+    color: #223647AF;
+}
+
+.sidebar a {
+    float: left;
+    border-radius: 12px;
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 16px;
+    text-align: left;
+    color: #1e2f3d;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    transition: background-color 1s;
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #284155;
+}
+
+.sidebar i {
+    transition: 750ms;
+    padding-left: 8px;
+    padding-right: 12px;
+    vertical-align: top;
+    color: #284155;
+}
+
+.sidebar-button-name {
+    position: absolute;
+    transition: 350ms;
+}
+
+.sidebar-page-button {
+    background-color: rgba(255, 255, 255, 0.50);
+}
