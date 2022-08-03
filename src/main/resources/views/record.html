@@ -12,15 +12,15 @@
 
         <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon"/>
         <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-        <link rel="stylesheet" type="text/css" href="/css/products.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/record.css"/>
 
         <script async src="/js/sidebar.js"></script>
-        
+
         <title>Stock Storage</title>
     </head>
 
     <body>
-        <a class="sidebar-button-main" onclick="displaySidebarProducts()">
+        <a class="sidebar-button-main" onclick="displaySidebarRegister()">
             <i class="material-symbols-rounded">menu</i>
         </a>
 
@@ -61,12 +61,12 @@
                 <input placeholder="Buscar"></input>
             </div>
 
-            <a class="sidebar-page-button" href="">
+            <a th:href="@{/produtos}">
                 <i class="material-symbols-outlined">label</i>
                 <span class="sidebar-button-name">Produtos</span>
             </a>
 
-            <a th:href="@{/produtos/cadastrar}">
+            <a class="sidebar-page-button">
                 <i class="material-symbols-outlined">add_circle</i>
                 <span class="sidebar-button-name">Cadastrar</span>
             </a>
@@ -87,43 +87,45 @@
             </a>
         </div>
 
-        <div class="products-table">
-            <table class="table-main table table-borderless table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Tipo</th>
-                        <th>Quantidade</th>
-                        <th>Removido</th>
-                        <th>Estoque Mínimo</th>
-                        <th>Valor Unitário</th>
-                        <th>Localização</th>
-                        <th>Fornecedor</th>
-                        <th>Editar</th>
-                    </tr>
-                </thead>
+        <section class="register-main">
+            <form class th:action="@{/produtos}" th:object="${products}" method="POST">
+                <div class="register-field">
+                    <label for="products">Nome</label>
+                    <input type="text" name="products" id="products" placeholder="Nome do Produto" th:field="*{name}" required>
+                </div>
 
-                <tbody id="table-items">
-                    <tr th:each="item:${products}">
-                        <td th:text=${item.id}></td>
-                        <td th:text=${item.name}></td>
-                        <td th:text=${item.type}></td>
-                        <td th:text=${item.quantity}></td>
-                        <td th:text=${item.removed}></td>
-                        <td th:text=${item.minimum}></td>
-                        <td th:text=${item.price}></td>
-                        <td th:text=${item.location}></td>
-                        <td th:text=${item.supplier}></td>
+                <div class="register-field">
+                    <label for="type">Tipo</label>
+                    <input type="text" name="type" id="type" placeholder="Tipo do Produto" th:field="*{type}" required>
+                </div>
 
-                        <td>
-                            <a class="table-button-modify" th:href="@{/produtos/editar/{id}(id=${item.id})}">
-                                <i class="material-symbols-outlined">draw</i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <div class="register-field">
+                    <label for="quantity">Quantidade</label>
+                    <input type="text" name="quantity" id="quantity" placeholder="Quantidade em Estoque" th:field="*{quantity}" required>
+                </div>
+
+                <div class="register-field register-field-left">
+                    <label for="minimum">Mínimo</label>
+                    <input type="text" name="minimum" id="minimum" placeholder="Estoque Mínimo" th:field="*{minimum}" required>
+                </div>
+
+                <div class="register-field register-field-right">
+                    <label for="price">Valor Unitário</label>
+                    <input type="text" name="price" id="price" placeholder="Valor Unitário (R$)" th:field="*{price}" required>
+                </div>
+                
+                <div class="register-field">
+                    <label for="location">Localização</label>
+                    <input type="text" name="location" id="location" placeholder="Localização do Produto" th:field="*{location}" required>
+                </div>
+
+                <div class="register-field">
+                    <label for="supplier">Fornecedor</label>
+                    <input type="text" name="supplier" id="supplier" placeholder="Fornecedor do Produto" th:field="*{supplier}" required>
+                </div>
+
+                <button class="btn btn-dark">Cadastrar</button>
+            </form>
+        </section>
     </body>
 </html>

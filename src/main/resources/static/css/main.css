@@ -8,6 +8,13 @@ body {
     text-align: center;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 
 /* Cabeçalho */
 .header {
@@ -115,7 +122,6 @@ body {
 
 .sidebar-button-main i {
     font-size: 28px;
-    margin-right: 200px;
 }
 
 .sidebar-search {

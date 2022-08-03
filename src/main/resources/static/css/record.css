@@ -1,0 +1,99 @@
+a {
+    cursor: pointer !important;
+}
+
+
+/* Cabeçalho - Alinhamento */
+.header .logo h1 {
+    margin-bottom: 4px;
+}
+
+.header .inner .logo img {
+    margin-bottom: 6px;
+} 
+
+.header nav {
+    padding-top: 1px;
+}
+
+
+/* Tela de Cadastro */
+.register-main {
+    position: absolute;
+    left: 39%;
+    transition: 750ms;
+    width: 700px;
+    height: 740px;
+    margin-top: 56px;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: rgba(143, 185, 170, 0.25);
+    text-align: center;
+}
+
+.register-main form {
+    margin-left: 28px;
+}
+
+.register-main input {
+    display: block;
+    outline: 0;
+    border: 0;
+    width: 600px;
+    height: 56px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.10);
+    background-color: rgba(255, 255, 255, 0.10);
+    text-align: center;
+}
+
+.register-main input:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.register-main input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.register-main input::placeholder {
+    color: #304D63;
+}
+
+.register-main a {
+    margin-left: 140px;
+}
+
+.register-field {
+    float: left;
+    display: block;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.register-field label {
+    margin-bottom: 0;
+    margin-left: 8px;
+}
+
+.register-field-left input {
+    width: 290px;
+}
+
+.register-field-left {
+    margin-right: 9px;
+}
+
+.register-field-right input {
+    width: 290px;
+}
+
+.register-field-right {
+    margin-left: 9px;
+}
+
+.btn {
+    margin-left: -28px;
+    margin-top: 42px;
+    padding: 16px 32px;
+}

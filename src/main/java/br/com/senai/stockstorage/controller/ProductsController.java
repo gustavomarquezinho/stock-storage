@@ -28,7 +28,7 @@ public class ProductsController {
         Products products = new Products();
         
         model.addAttribute("products", products);
-        return "register";
+        return "record";
     }
 
     @PostMapping("/produtos")
