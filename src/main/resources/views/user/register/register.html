@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+        <link rel="shortcut icon" href="../../assets/favicon.png" type="image/x-icon"/>
+        <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="style.css"/>
+
+        <title>Stock Storage</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="inner">
+                <div class="logo">
+                    <div>
+                        <img src="../../assets/icons/gesture.svg" alt="icon">
+                        <h1>Stock <span>Storage</span></h1>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <li>
+                        <span><a href="../index.html">Entrar</a></span>
+                    </li>
+
+                    <li>
+                        <span><a href="">Cadastrar</a></span>
+                    </li>
+
+                    <li>
+                        <span><a href="">Sobre</a></span>
+                    </li>
+                </nav>
+            </div>
+        </header>
+
+        <div class="box">
+            <h1>Cadastro</h1>
+
+            <span class="message">
+                <p id="message">⠀</p>
+            </span>
+
+            <div class="login">
+                <label for="username" id="userTitle">CPF</label>
+
+                <div class="input-icons">
+                    <i class="material-symbols-outlined icon">
+                        person
+                    </i>
+
+                    <input type="text" id="username" name="cpf" placeholder="Informe o CPF" maxlength="14" spellcheck="false"/>
+                </div>
+            </div>
+
+            <div class="login">
+                <label for="email" id="emailTitle">E-mail</label>
+
+                <div class="input-icons">
+                    <i class="material-symbols-outlined icon">
+                        alternate_email
+                    </i>
+
+                    <input type="email" id="email" placeholder="Informe o e-mail" maxlength="48"/>
+                </div>
+            </div>
+
+            <div class="login">
+                <label for="password" id="passTitle">Senha</label>
+
+                <div class="input-icons">
+                    <i class="material-symbols-outlined icon">
+                        lock
+                    </i>
+                    
+                    <input type="password" id="password" placeholder="Informe a senha" maxlength="32"/>
+                </div>
+            </div>
+
+            <section>
+                <button onclick="verifyLoginFields()" id='loginButton'>Cadastrar</button>
+            </section> 
+        </div>
+    </body>
+
+    <footer>  
+    </footer>
+</html>
